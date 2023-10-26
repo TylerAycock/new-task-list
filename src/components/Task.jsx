@@ -4,7 +4,7 @@ import { useState } from "react";
 const Task = ({ tasks, setTasks }) => {
   const [hovered, setHovered] = useState(false);
 
-  // function used to toggle the complete/incomplete tasks
+  // "complete" task functionality
 
   const handleCheck = (id) => {
     const newTasks = tasks.map((item) => {
@@ -17,7 +17,7 @@ const Task = ({ tasks, setTasks }) => {
     setTasks(newTasks);
   };
 
-  //   function to handle mouse hover to show delete button
+  //   show delete button functionality
 
   const handleMouseEnter = (id) => {
     setHovered(id);
@@ -27,7 +27,7 @@ const Task = ({ tasks, setTasks }) => {
     setHovered(false);
   };
 
-  //   delete the li function
+  //   delete the li functiononality
   const clickHandler = (id) => {
     console.log(`going to delete ${id}`);
     let filteredTasks = tasks.filter((item) => {
@@ -36,16 +36,37 @@ const Task = ({ tasks, setTasks }) => {
     setTasks(filteredTasks);
   };
 
+  //draggable functionality
+  const handleDragStart = (e, index) => {
+    e.dataTransfer.setData("index", index);
+  };
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
+  };
+
+  const handleDrop = (e, newIndex) => {
+    const oldIndex = e.dataTransfer.getData("index");
+    const updatedTasks = [...tasks];
+    const [movedTask] = updatedTasks.splice(oldIndex, 1);
+    updatedTasks.splice(newIndex, 0, movedTask);
+    setTasks(updatedTasks);
+  };
+
   return (
     <ul className="output__container">
-      {tasks.map((item) => {
+      {tasks.map((item, index) => {
         return (
           <li
             id={item.id}
-            key={item.id}
+            key={index}
             className={!item.complete ? "ind__task" : "ind__task complete"}
             onMouseEnter={() => handleMouseEnter(item.id)}
             onMouseLeave={() => handleMouseLeave(item.id)}
+            draggable
+            onDragStart={(e) => handleDragStart(e, index)}
+            onDragOver={handleDragOver}
+            onDrop={(e) => handleDrop(e, index)}
           >
             <div>
               <input

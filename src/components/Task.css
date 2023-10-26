@@ -29,7 +29,7 @@
     align-items: center;
     border: 1px solid;
     max-width: 200px;
-    cursor: pointer;
+    cursor: grab;
 }
 
 .complete{
