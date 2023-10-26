@@ -4,6 +4,8 @@ import { useState } from "react";
 const Task = ({ tasks, setTasks }) => {
   const [hovered, setHovered] = useState(false);
 
+  // function used to toggle the complete/incomplete tasks
+
   const handleCheck = (id) => {
     const newTasks = tasks.map((item) => {
       if (item.id === id) {
@@ -15,6 +17,8 @@ const Task = ({ tasks, setTasks }) => {
     setTasks(newTasks);
   };
 
+  //   function to handle mouse hover to show delete button
+
   const handleMouseEnter = (id) => {
     setHovered(id);
   };
@@ -23,6 +27,7 @@ const Task = ({ tasks, setTasks }) => {
     setHovered(false);
   };
 
+  //   delete the li function
   const clickHandler = (id) => {
     console.log(`going to delete ${id}`);
     let filteredTasks = tasks.filter((item) => {

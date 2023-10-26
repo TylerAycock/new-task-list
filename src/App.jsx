@@ -29,6 +29,13 @@ function App() {
     });
   };
 
+  const deleteHandler = () => {
+    let incompelte = tasks.filter((item) => {
+      return !item.complete;
+    });
+    setTasks(incompelte);
+  };
+
   return (
     <>
       <div className="input__container">
@@ -38,6 +45,11 @@ function App() {
         </form>
       </div>
       <Task tasks={tasks} setTasks={setTasks} />
+      {tasks.length > 0 && (
+        <button className="clear" onClick={() => deleteHandler()}>
+          Clear Completed
+        </button>
+      )}
     </>
   );
 }
