@@ -1,0 +1,47 @@
+.ind__task{
+    display: flex;
+    gap: 20px;
+}
+
+.ind__task li{
+    list-style-type: none;
+}
+
+.ind__task div{
+    position: relative;
+    width: 100%;
+    display: flex;
+}
+
+.delete{
+    position: absolute;
+    right: 0px;
+    top: 12%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-weight: 800;
+}
+
+.noShow{
+    display: none;
+    position: absolute;
+    right: 0px;
+    top: 12%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-weight: 800;
+    
+}
+
+.ind__task{
+    display: flex;
+    align-items: center;
+    border: 1px solid;
+    max-width: 200px;
+}
+
+.complete{
+    text-decoration: line-through;
+}
