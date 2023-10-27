@@ -1,15 +1,15 @@
+/* main container */
+
 .wrapper{
     height: 100vh;
 }
+
+/* heading */
 
 header{
     background-image: url('./assets/images/background.jpg');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    text-align: center;
     background-size: cover;
     width: 100%;
     height: 300px;
@@ -36,6 +36,8 @@ header h1{
     height: 100%;
 }
 
+/* input container */
+
 main{
     display: flex;
     flex-direction: column;
@@ -58,6 +60,8 @@ main{
     box-shadow: 3px 3px 3px rgba(0,0,0,.25);
 }
 
+/* output functionality */
+
 
 .functionality{
     width: 400px;
@@ -73,4 +77,30 @@ main{
     outline: none;
     border: none;
     background: transparent;
+}
+
+
+/* media queries */
+
+@media screen and (max-width: 600px){
+
+/* heading  */
+
+    .heading__container h1{
+        justify-self: end;
+        font-size: 2.5em;
+    }
+    .heading__container .moon{
+        font-size: 2em;
+    }
+
+/* inputs */
+
+    .input__container, main .output__container, .functionality{
+        width: 200px;
+    }
+
+    .functionality .clear{
+        align-self: center;
+    }
 }
