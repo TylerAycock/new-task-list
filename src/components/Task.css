@@ -1,21 +1,28 @@
-.ind__task{
-    display: flex;
-    gap: 20px;
+.output__container{
+    width: 400px;
 }
 
-.ind__task{
-    list-style-type: none;
+.output__container li{
+    width: 100%;
+    outline: none;
+    padding: 20px 10px;
+    border: 1px solid;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 3px 3px 3px rgba(0,0,0,.25);
 }
+
 
 .ind__task div{
     position: relative;
-    width: 100%;
     display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 .delete{
     position: absolute;
-    right: 0px;
+    right: 10px;
     top: 12%;
     border: none;
     outline: none;
@@ -24,14 +31,7 @@
 }
 
 
-.ind__task{
-    display: flex;
-    align-items: center;
-    border: 1px solid;
-    max-width: 200px;
-    cursor: grab;
-}
-
 .complete{
     text-decoration: line-through;
 }
+

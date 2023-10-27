@@ -1,6 +1,7 @@
 import "./App.css";
 import { useState } from "react";
 import Task from "./components/Task";
+import { HiOutlineMoon } from "react-icons/hi";
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -37,20 +38,35 @@ function App() {
   };
 
   return (
-    <>
-      <div className="input__container">
-        <h1>todo</h1>
-        <form onSubmit={submitHandler}>
-          <input type="text" value={input.text} onChange={changeHandler} />
-        </form>
-      </div>
-      <Task tasks={tasks} setTasks={setTasks} />
-      {tasks.length > 0 && (
-        <button className="clear" onClick={() => deleteHandler()}>
-          Clear Completed
-        </button>
-      )}
-    </>
+    <div className=".wrapper">
+      <header>
+        <div className="heading__container">
+          <h1>todo</h1>
+          <HiOutlineMoon className="moon" />
+        </div>
+      </header>
+      <main>
+        <div className="input__container">
+          <form onSubmit={submitHandler}>
+            <input
+              type="text"
+              value={input.text}
+              onChange={changeHandler}
+              placeholder="Create a new todo..."
+            />
+          </form>
+        </div>
+        <Task tasks={tasks} setTasks={setTasks} />
+        {tasks.length > 0 && (
+          <div className="functionality">
+            <button className="clear" onClick={() => deleteHandler()}>
+              Clear Completed
+            </button>
+            <p>Drag and drop to reorder list</p>
+          </div>
+        )}
+      </main>
+    </div>
   );
 }
 

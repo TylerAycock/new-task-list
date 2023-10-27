@@ -1,0 +1,76 @@
+.wrapper{
+    height: 100vh;
+}
+
+header{
+    background-image: url('./assets/images/background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-size: cover;
+    width: 100%;
+    height: 300px;
+}
+
+header h1{
+    color: #eee;;
+    font-weight: 700;
+    font-size: 5em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.moon{
+    color: #eee;;
+    font-size: 5rem;
+}
+
+.heading__container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+    height: 100%;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.input__container{
+    margin-top: -100px;
+    margin-bottom: 60px;
+    width: 400px;
+}
+
+.input__container input{
+    width: 100%;
+    outline: none;
+    padding: 20px 10px;
+    border-radius: 8px;
+    opacity: .9;
+    box-shadow: 3px 3px 3px rgba(0,0,0,.25);
+}
+
+
+.functionality{
+    width: 400px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.clear{
+    align-self: flex-end;
+    cursor: pointer;
+    margin: 10px 0px;
+    outline: none;
+    border: none;
+    background: transparent;
+}
